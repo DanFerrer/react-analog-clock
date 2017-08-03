@@ -31,7 +31,7 @@ class Clock extends React.Component {
 			const seconds = this.state.date.getSeconds();
 
 			const hourPosition = (hours * 360 / 12) + (minutes * (360 / 60) / 12);
-			const minutePosition = (minutes * 360 / 60) + (minutes * (360 / 60) / 60);
+			const minutePosition = (minutes * 360 / 60) + (seconds * (360 / 60) / 60);
 			const secondPosition = seconds * 360 /60;
 
 			const origin = `${circleStart}px ${circleStart}px`;
