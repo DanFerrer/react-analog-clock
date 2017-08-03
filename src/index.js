@@ -1,3 +1,9 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Clock from './clock/Clock';
 import './main.scss';
 
-console.log('Hey guys and ladies!!');
+ReactDOM.render(
+	<Clock />,
+	document.getElementById('app')
+);
