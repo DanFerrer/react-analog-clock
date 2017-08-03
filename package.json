@@ -4,7 +4,7 @@
   "description": "Clock made with React components ",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_PATH=src webpack-dev-server",
+    "start": "cross-env webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
