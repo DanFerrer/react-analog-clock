@@ -1,10 +1,12 @@
 import React from 'react';
 
-import ClockFace from './ClockFace.js';
+import ClockFace from './ClockFace';
+// import ClockHand from './ClockHand';
 
 import './clock.scss';
 
-const circleStart = 600;
+const circleWidth = 600;
+const circleStart = circleWidth / 2;
 
 class Clock extends React.Component {
 	constructor(props) {
@@ -13,8 +15,8 @@ class Clock extends React.Component {
 
 	render() {
 		return (
-			<svg id="clock" width={circleStart} height={circleStart} viewBox={`0 0 ${circleStart} ${circleStart}`}>
-				<ClockFace coordinates={circleStart / 2}></ClockFace>
+			<svg id="clock" width={circleWidth} height={circleWidth} viewBox={`0 0 ${circleWidth} ${circleWidth}`}>
+				<ClockFace start={circleStart} radius={circleStart * 0.05}></ClockFace>
 			</svg>
 		);
 	}
