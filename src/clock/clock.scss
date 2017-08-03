@@ -2,6 +2,7 @@ $clock-fill-color: #222222;
 $clock-stroke-color: #222222;
 $clock-stroke-width: 5;
 $clock-miter-limit: 10;
+$second-stroke-color: #FF0000;
 
 #clock {
 	width: 100%;
@@ -17,6 +18,32 @@ $clock-miter-limit: 10;
 .middle-face {
 	fill: $clock-fill-color;
 }
+
+.hour-arm {
+	fill: none;
+	stroke: $clock-fill-color;
+	stroke-width: $clock-stroke-width * 3;
+	stroke-miterlimit: $clock-miter-limit;
+}
+
+.minute-arm {
+	fill: none;
+	stroke: $clock-fill-color;
+	stroke-width: $clock-stroke-width * 2;
+	stroke-miterlimit: $clock-miter-limit;
+}
+
+.second-arm {
+	fill: none;
+	stroke: $second-stroke-color;
+	stroke-width: $clock-stroke-width; 
+	stroke-miterlimit: $clock-miter-limit;
+}
+
+.hidden {
+	fill: none;
+}
+
 
 
 
