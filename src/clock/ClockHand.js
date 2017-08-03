@@ -5,7 +5,7 @@ const ClockHand = (props) => {
 	return (
 		<g id={props.handId}>
 			<path className={props.handClass} d={`M${props.start} ${props.stop}V${props.draw}`}/>
-			<circle className={'hidden'} cx={props.start} cy={props.start} r={props.radius}/>
+			<circle className='hidden' cx={props.start} cy={props.start} r={props.radius}/>
 		</g>
 	);
 };

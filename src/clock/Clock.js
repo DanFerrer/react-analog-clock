@@ -18,8 +18,8 @@ class Clock extends React.Component {
 			<svg id="clock" width={circleWidth} height={circleWidth} viewBox={`0 0 ${circleWidth} ${circleWidth}`}>
 				<ClockFace start={circleStart} radius={circleStart * 0.05}></ClockFace>
 				<ClockHand 
-					handId={'hour'}
-					handClass={'hour-arm'}
+					handId='hour'
+					handClass='hour-arm'
 					start={circleStart}
 					stop={circleStart - 2}
 					draw={circleStart / 2}
@@ -27,8 +27,8 @@ class Clock extends React.Component {
 				>
 				</ClockHand>
 				<ClockHand 
-					handId={'minute'}
-					handClass={'minute-arm'}
+					handId='minute'
+					handClass='minute-arm'
 					start={circleStart}
 					stop={circleStart - 2}
 					draw={circleStart * 0.25}
@@ -36,8 +36,8 @@ class Clock extends React.Component {
 				>
 				</ClockHand>
 				<ClockHand 
-					handId={'second'}
-					handClass={'second-arm'}
+					handId='second'
+					handClass='second-arm'
 					start={circleStart}
 					stop={circleStart + 50}
 					draw={circleStart * 0.20}
