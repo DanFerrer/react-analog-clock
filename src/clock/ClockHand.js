@@ -2,10 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ClockHand = (props) => {
+	const {
+		handId,
+		handStyles,
+		handClass,
+		start,
+		stop,
+		draw, 
+		radius
+	} = props;
+
 	return (
-		<g id={props.handId} style={props.handStyles}>
-			<path className={props.handClass} d={`M${props.start} ${props.stop}V${props.draw}`}/>
-			<circle className='hidden' cx={props.start} cy={props.start} r={props.radius}/>
+		<g id={handId} style={handStyles}>
+			<path className={handClass} d={`M${start} ${stop}V${draw}`}/>
+			<circle className='hidden' cx={start} cy={start} r={radius}/>
 		</g>
 	);
 };
