@@ -1,21 +1,25 @@
-const path = require('path');
 const webpack = require('webpack');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-
-const basePath = `${__dirname}/src/`;
 
 module.exports = {
-	devtool: 'inline-source-map',
-	entry: `${basePath}index.js`,
+	entry: [
+		'webpack-dev-server/client?http://localhost:3000',
+		'webpack/hot/only-dev-server',
+		'./src/index.js'
+	],
 	output: {
-		filename: '[name].bundle.js',
-		path: path.resolve(__dirname, 'dist')
+		path: path.resolve(__dirname, 'dist'),
+		filename: '[name].js',
 	},
+	devtool: 'eval',
 	devServer: {
 		contentBase: './dist',
+		port: 3000,	
 		compress: true,
-		port: 8080
+		inline: true,
+		open: true,
+		hot: true
 	},
 	module: {
 		rules: [
@@ -45,13 +49,16 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new CleanWebpackPlugin(['dist']),
-		new webpack.optimize.UglifyJsPlugin(),
-		new webpack.HotModuleReplacementPlugin(),
+		new webpack.EnvironmentPlugin([
+			'NODE_ENV',
+		]),
 		new HtmlWebpackPlugin({
-			template: `${basePath}index.html`,
+			template: './src/index.html',
 			filename: 'index.html',
 			inject: 'body'
-		})
+		}),
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NamedModulesPlugin(),
+		new webpack.NoEmitOnErrorsPlugin()
 	]
 };
